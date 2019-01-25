@@ -10,8 +10,6 @@ CREATE TABLE Glos (
     Wyborca_indeks varchar(6) NOT NULL,
     Wybory_nazwa varchar(100) NOT NULL,
     Kandydat_indeks varchar(6) NOT NULL,
-    CHECK (REGEXP_LIKE(Wyborca_indeks, '\d{6}')),
-    CHECK (REGEXP_LIKE(Kandydat_indeks, '\d{6}')),
     CONSTRAINT Glos_pk PRIMARY KEY (Wyborca_indeks, Wybory_nazwa)
 );
 
