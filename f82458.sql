@@ -27,7 +27,7 @@ prompt APPLICATION 82458 - Wybory
 -- Application Export:
 --   Application:     82458
 --   Name:            Wybory
---   Date and Time:   17:57 Friday January 25, 2019
+--   Date and Time:   21:04 Friday January 25, 2019
 --   Exported By:     LKL.ZAREBSKI@GMAIL.COM
 --   Flashback:       0
 --   Export Type:     Application Export
@@ -117,7 +117,7 @@ wwv_flow_api.create_flow(
 ,p_substitution_string_01=>'APP_NAME'
 ,p_substitution_value_01=>'Wybory'
 ,p_last_updated_by=>'LKL.ZAREBSKI@GMAIL.COM'
-,p_last_upd_yyyymmddhh24miss=>'20190125175650'
+,p_last_upd_yyyymmddhh24miss=>'20190125210354'
 ,p_file_prefix => nvl(wwv_flow_application_install.get_static_app_file_prefix,'')
 ,p_files_version=>3
 ,p_ui_type_name => null
@@ -9889,7 +9889,7 @@ wwv_flow_api.create_page(
 ,p_autocomplete_on_off=>'OFF'
 ,p_page_template_options=>'#DEFAULT#'
 ,p_last_updated_by=>'LKL.ZAREBSKI@GMAIL.COM'
-,p_last_upd_yyyymmddhh24miss=>'20190125172152'
+,p_last_upd_yyyymmddhh24miss=>'20190125205706'
 );
 wwv_flow_api.create_page_plug(
  p_id=>wwv_flow_api.id(26987806025803678776)
@@ -9935,12 +9935,14 @@ wwv_flow_api.create_page_item(
 ,p_prompt=>'Nowe Id'
 ,p_display_as=>'NATIVE_TEXT_FIELD'
 ,p_cSize=>30
+,p_cMaxlength=>20
 ,p_field_template=>wwv_flow_api.id(26928631527676904648)
 ,p_item_template_options=>'#DEFAULT#'
+,p_restricted_characters=>'US_ONLY'
 ,p_attribute_01=>'N'
 ,p_attribute_02=>'N'
 ,p_attribute_04=>'TEXT'
-,p_attribute_05=>'NONE'
+,p_attribute_05=>'BOTH'
 );
 wwv_flow_api.create_page_item(
  p_id=>wwv_flow_api.id(26987809003452678782)
@@ -9951,12 +9953,13 @@ wwv_flow_api.create_page_item(
 ,p_prompt=>'Nowy Indeks'
 ,p_display_as=>'NATIVE_TEXT_FIELD'
 ,p_cSize=>30
+,p_cMaxlength=>6
 ,p_field_template=>wwv_flow_api.id(26928631527676904648)
 ,p_item_template_options=>'#DEFAULT#'
 ,p_attribute_01=>'N'
 ,p_attribute_02=>'N'
 ,p_attribute_04=>'TEXT'
-,p_attribute_05=>'NONE'
+,p_attribute_05=>'BOTH'
 );
 wwv_flow_api.create_page_item(
  p_id=>wwv_flow_api.id(26987809486883678783)
@@ -9965,14 +9968,14 @@ wwv_flow_api.create_page_item(
 ,p_item_sequence=>30
 ,p_item_plug_id=>wwv_flow_api.id(26987806025803678776)
 ,p_prompt=>'Nowe Haslo'
-,p_display_as=>'NATIVE_TEXT_FIELD'
+,p_display_as=>'NATIVE_PASSWORD'
 ,p_cSize=>30
+,p_cMaxlength=>100
 ,p_field_template=>wwv_flow_api.id(26928631527676904648)
 ,p_item_template_options=>'#DEFAULT#'
-,p_attribute_01=>'N'
-,p_attribute_02=>'N'
-,p_attribute_04=>'TEXT'
-,p_attribute_05=>'NONE'
+,p_encrypt_session_state_yn=>'Y'
+,p_attribute_01=>'Y'
+,p_attribute_02=>'Y'
 );
 wwv_flow_api.create_page_process(
  p_id=>wwv_flow_api.id(26987809853659678783)
@@ -9985,6 +9988,7 @@ wwv_flow_api.create_page_process(
 'NOWE_ID => :P2_WE_ID,',
 'NOWY_INDEKS => :P2_WY_INDEKS,',
 'NOWE_HASLO => :P2_WE_HASLO);'))
+,p_process_error_message=>unistr('B\0142\0105d przy dodawaniu - sprawd\017A poprawno\015B\0107 danych')
 ,p_error_display_location=>'INLINE_IN_NOTIFICATION'
 ,p_process_when_button_id=>wwv_flow_api.id(26987806525046678777)
 );
@@ -10012,7 +10016,7 @@ wwv_flow_api.create_page(
 ,p_autocomplete_on_off=>'OFF'
 ,p_page_template_options=>'#DEFAULT#'
 ,p_last_updated_by=>'LKL.ZAREBSKI@GMAIL.COM'
-,p_last_upd_yyyymmddhh24miss=>'20190125172122'
+,p_last_upd_yyyymmddhh24miss=>'20190125205717'
 );
 wwv_flow_api.create_page_plug(
  p_id=>wwv_flow_api.id(26988580444511712996)
@@ -10058,12 +10062,13 @@ wwv_flow_api.create_page_item(
 ,p_prompt=>'Nazwa'
 ,p_display_as=>'NATIVE_TEXT_FIELD'
 ,p_cSize=>30
+,p_cMaxlength=>100
 ,p_field_template=>wwv_flow_api.id(26928631527676904648)
 ,p_item_template_options=>'#DEFAULT#'
 ,p_attribute_01=>'N'
 ,p_attribute_02=>'N'
 ,p_attribute_04=>'TEXT'
-,p_attribute_05=>'NONE'
+,p_attribute_05=>'BOTH'
 );
 wwv_flow_api.create_page_item(
  p_id=>wwv_flow_api.id(26988583477315713001)
@@ -10138,6 +10143,7 @@ wwv_flow_api.create_page_process(
 'ZAK => :P3_K,',
 'ROZP => :P3_ZP,',
 'ZGL => :P3_L);'))
+,p_process_error_message=>unistr('B\0142\0105d przy dodawaniu - sprawd\017A poprawno\015B\0107 danych')
 ,p_error_display_location=>'INLINE_IN_NOTIFICATION'
 ,p_process_when_button_id=>wwv_flow_api.id(26988580953717712997)
 );
@@ -10165,7 +10171,7 @@ wwv_flow_api.create_page(
 ,p_autocomplete_on_off=>'OFF'
 ,p_page_template_options=>'#DEFAULT#'
 ,p_last_updated_by=>'LKL.ZAREBSKI@GMAIL.COM'
-,p_last_upd_yyyymmddhh24miss=>'20190125172318'
+,p_last_upd_yyyymmddhh24miss=>'20190125210216'
 );
 wwv_flow_api.create_page_plug(
  p_id=>wwv_flow_api.id(27083914471146826594)
@@ -10209,14 +10215,12 @@ wwv_flow_api.create_page_item(
 ,p_item_sequence=>10
 ,p_item_plug_id=>wwv_flow_api.id(27083914471146826594)
 ,p_prompt=>'Indeks'
-,p_display_as=>'NATIVE_TEXT_FIELD'
+,p_display_as=>'NATIVE_NUMBER_FIELD'
 ,p_cSize=>30
+,p_cMaxlength=>6
 ,p_field_template=>wwv_flow_api.id(26928631527676904648)
 ,p_item_template_options=>'#DEFAULT#'
-,p_attribute_01=>'N'
-,p_attribute_02=>'N'
-,p_attribute_04=>'TEXT'
-,p_attribute_05=>'NONE'
+,p_attribute_03=>'left'
 );
 wwv_flow_api.create_page_process(
  p_id=>wwv_flow_api.id(27083917404770826600)
@@ -10227,6 +10231,7 @@ wwv_flow_api.create_page_process(
 ,p_process_sql_clob=>wwv_flow_string.join(wwv_flow_t_varchar2(
 '#OWNER#.ADD_KANDYDAT(',
 'INDEKS => :P4_DEKS);'))
+,p_process_error_message=>unistr('B\0142\0105d przy zg\0142aszaniu kandydata - sprawd\017A poprawno\015B\0107 indeksu, i upewnij si\0119 \017Ce ten kandydat nie zosta\0142 jeszcze zg\0142oszony')
 ,p_error_display_location=>'INLINE_IN_NOTIFICATION'
 ,p_process_when_button_id=>wwv_flow_api.id(27083914962914826594)
 );
@@ -10254,7 +10259,7 @@ wwv_flow_api.create_page(
 ,p_autocomplete_on_off=>'OFF'
 ,p_page_template_options=>'#DEFAULT#'
 ,p_last_updated_by=>'LKL.ZAREBSKI@GMAIL.COM'
-,p_last_upd_yyyymmddhh24miss=>'20190125174620'
+,p_last_upd_yyyymmddhh24miss=>'20190125210111'
 );
 wwv_flow_api.create_page_plug(
  p_id=>wwv_flow_api.id(27079902276966517932)
@@ -10298,14 +10303,12 @@ wwv_flow_api.create_page_item(
 ,p_item_sequence=>10
 ,p_item_plug_id=>wwv_flow_api.id(27079902276966517932)
 ,p_prompt=>'Indeks'
-,p_display_as=>'NATIVE_TEXT_FIELD'
+,p_display_as=>'NATIVE_NUMBER_FIELD'
 ,p_cSize=>30
+,p_cMaxlength=>6
 ,p_field_template=>wwv_flow_api.id(26928631527676904648)
 ,p_item_template_options=>'#DEFAULT#'
-,p_attribute_01=>'N'
-,p_attribute_02=>'N'
-,p_attribute_04=>'TEXT'
-,p_attribute_05=>'BOTH'
+,p_attribute_03=>'left'
 );
 wwv_flow_api.create_page_item(
  p_id=>wwv_flow_api.id(27079905433534517937)
@@ -10316,6 +10319,7 @@ wwv_flow_api.create_page_item(
 ,p_prompt=>unistr('Nazwa wybor\00F3w')
 ,p_display_as=>'NATIVE_TEXT_FIELD'
 ,p_cSize=>30
+,p_cMaxlength=>100
 ,p_field_template=>wwv_flow_api.id(26928631527676904648)
 ,p_item_template_options=>'#DEFAULT#'
 ,p_attribute_01=>'N'
@@ -10339,6 +10343,7 @@ wwv_flow_api.create_page_process(
 '    INDEKS_K => :P5_DEKS_K,',
 '    NAZWA => :P5_ZWA);',
 'END;'))
+,p_process_error_message=>unistr('B\0142\0105d przy oddawaniu g\0142osu - sprawd\017A poprawno\015B\0107 danych, i upewnij si\0119 \017Ce jeszcze nie g\0142osowa\0142e\015B/a\015B w tych wyborach')
 ,p_error_display_location=>'INLINE_IN_NOTIFICATION'
 ,p_process_when_button_id=>wwv_flow_api.id(27079902759863517932)
 );
@@ -10498,7 +10503,7 @@ wwv_flow_api.create_page(
 ,p_autocomplete_on_off=>'OFF'
 ,p_page_template_options=>'#DEFAULT#'
 ,p_last_updated_by=>'LKL.ZAREBSKI@GMAIL.COM'
-,p_last_upd_yyyymmddhh24miss=>'20190125175650'
+,p_last_upd_yyyymmddhh24miss=>'20190125205641'
 );
 wwv_flow_api.create_page_plug(
  p_id=>wwv_flow_api.id(26611648990129194017)
@@ -10545,6 +10550,7 @@ wwv_flow_api.create_page_item(
 ,p_prompt=>unistr('Nazwa wybor\00F3w')
 ,p_display_as=>'NATIVE_TEXT_FIELD'
 ,p_cSize=>30
+,p_cMaxlength=>100
 ,p_field_template=>wwv_flow_api.id(26928631527676904648)
 ,p_item_template_options=>'#DEFAULT#'
 ,p_attribute_01=>'Y'
@@ -10559,6 +10565,7 @@ wwv_flow_api.create_page_process(
 ,p_process_type=>'NATIVE_PLSQL'
 ,p_process_name=>'Run Stored Procedure'
 ,p_process_sql_clob=>'#OWNER#.opublikuj(:P8_INPUT);'
+,p_process_error_message=>unistr('B\0142\0105d przy publikowaniu - sprawd\017A poprawno\015B\0107 nazwy')
 ,p_error_display_location=>'INLINE_IN_NOTIFICATION'
 ,p_process_when_button_id=>wwv_flow_api.id(26611649687813194024)
 );
@@ -10586,7 +10593,7 @@ wwv_flow_api.create_page(
 ,p_autocomplete_on_off=>'OFF'
 ,p_page_template_options=>'#DEFAULT#'
 ,p_last_updated_by=>'LKL.ZAREBSKI@GMAIL.COM'
-,p_last_upd_yyyymmddhh24miss=>'20190125173605'
+,p_last_upd_yyyymmddhh24miss=>'20190125210354'
 );
 wwv_flow_api.create_report_region(
  p_id=>wwv_flow_api.id(26611650170624194029)
@@ -10669,6 +10676,7 @@ wwv_flow_api.create_page_item(
 ,p_prompt=>unistr('Nazwa wybor\00F3w')
 ,p_display_as=>'NATIVE_TEXT_FIELD'
 ,p_cSize=>30
+,p_cMaxlength=>100
 ,p_field_template=>wwv_flow_api.id(26928631527676904648)
 ,p_item_template_options=>'#DEFAULT#'
 ,p_attribute_01=>'N'
@@ -10678,7 +10686,7 @@ wwv_flow_api.create_page_item(
 );
 wwv_flow_api.create_page_validation(
  p_id=>wwv_flow_api.id(26611651170733194039)
-,p_validation_name=>'New'
+,p_validation_name=>'Check if public'
 ,p_validation_sequence=>10
 ,p_validation=>wwv_flow_string.join(wwv_flow_t_varchar2(
 'DECLARE',

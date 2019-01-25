@@ -163,11 +163,17 @@ END;
 /
 
 CREATE OR REPLACE PROCEDURE opublikuj(nazwa VARCHAR) IS
+    result char(1);
 BEGIN 
-    UPDATE Wybory
-    SET czy_opublikowane = 'Y'
-    WHERE nazwa_wyborow = nazwa;
-    COMMIT;
+    SELECT czy_opublikowane INTO result FROM Wybory WHERE nazwa_wyborow = nazwa;
+    IF result = 'N' THEN
+        UPDATE Wybory
+        SET czy_opublikowane = 'Y'
+        WHERE nazwa_wyborow = nazwa;
+        COMMIT;
+    ELSE
+        raise_application_error(-20000,'Nie istnieją nieopublikowane wybory o takiej nazwie'); 
+    END IF;
 END; 
 /
 
