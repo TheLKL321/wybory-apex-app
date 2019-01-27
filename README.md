@@ -1,7 +1,7 @@
 # wybory-apex-app
 Przykładowa aplikacja Oracle Apex, pozwalająca na przeprowadzanie wyborów wśród studentów
 
-Aby zainstalować, należy w serwisie apex.oracle, App Builder zaimportować plik f82458.sql, oraz w SQL Scripts uruchomić skrypt wybory.sql
+Aby zainstalować, należy w serwisie apex.oracle, App Builder zaimportować plik f82458.sql, oraz w SQL Scripts uruchomić skrypt wybory.sql </br>
 APLIKACJA NIE NADAJE SIĘ DO UŻYTKU W PRAWDZIWYCH WYBORACH Z WRAŻLIWYMI DANYMI
 
 * Zademonstrowana jest przykładowa aplikacja korzystająca z prostej bazy danych
