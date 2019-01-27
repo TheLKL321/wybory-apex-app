@@ -27,7 +27,7 @@ prompt APPLICATION 82458 - Wybory
 -- Application Export:
 --   Application:     82458
 --   Name:            Wybory
---   Date and Time:   21:04 Friday January 25, 2019
+--   Date and Time:   22:32 Sunday January 27, 2019
 --   Exported By:     LKL.ZAREBSKI@GMAIL.COM
 --   Flashback:       0
 --   Export Type:     Application Export
@@ -117,7 +117,7 @@ wwv_flow_api.create_flow(
 ,p_substitution_string_01=>'APP_NAME'
 ,p_substitution_value_01=>'Wybory'
 ,p_last_updated_by=>'LKL.ZAREBSKI@GMAIL.COM'
-,p_last_upd_yyyymmddhh24miss=>'20190125210354'
+,p_last_upd_yyyymmddhh24miss=>'20190127222956'
 ,p_file_prefix => nvl(wwv_flow_application_install.get_static_app_file_prefix,'')
 ,p_files_version=>3
 ,p_ui_type_name => null
@@ -10259,7 +10259,7 @@ wwv_flow_api.create_page(
 ,p_autocomplete_on_off=>'OFF'
 ,p_page_template_options=>'#DEFAULT#'
 ,p_last_updated_by=>'LKL.ZAREBSKI@GMAIL.COM'
-,p_last_upd_yyyymmddhh24miss=>'20190125210111'
+,p_last_upd_yyyymmddhh24miss=>'20190127222731'
 );
 wwv_flow_api.create_page_plug(
  p_id=>wwv_flow_api.id(27079902276966517932)
@@ -10317,15 +10317,15 @@ wwv_flow_api.create_page_item(
 ,p_item_sequence=>20
 ,p_item_plug_id=>wwv_flow_api.id(27079902276966517932)
 ,p_prompt=>unistr('Nazwa wybor\00F3w')
-,p_display_as=>'NATIVE_TEXT_FIELD'
-,p_cSize=>30
-,p_cMaxlength=>100
+,p_display_as=>'NATIVE_SELECT_LIST'
+,p_lov=>'SELECT nazwa_wyborow d, nazwa_wyborow r FROM Wybory'
+,p_lov_display_null=>'YES'
+,p_cHeight=>1
 ,p_field_template=>wwv_flow_api.id(26928631527676904648)
 ,p_item_template_options=>'#DEFAULT#'
-,p_attribute_01=>'N'
+,p_lov_display_extra=>'YES'
+,p_attribute_01=>'NONE'
 ,p_attribute_02=>'N'
-,p_attribute_04=>'TEXT'
-,p_attribute_05=>'BOTH'
 );
 wwv_flow_api.create_page_process(
  p_id=>wwv_flow_api.id(27080445810058517938)
@@ -10593,7 +10593,7 @@ wwv_flow_api.create_page(
 ,p_autocomplete_on_off=>'OFF'
 ,p_page_template_options=>'#DEFAULT#'
 ,p_last_updated_by=>'LKL.ZAREBSKI@GMAIL.COM'
-,p_last_upd_yyyymmddhh24miss=>'20190125210354'
+,p_last_upd_yyyymmddhh24miss=>'20190127222956'
 );
 wwv_flow_api.create_report_region(
  p_id=>wwv_flow_api.id(26611650170624194029)
@@ -10674,15 +10674,15 @@ wwv_flow_api.create_page_item(
 ,p_item_sequence=>10
 ,p_item_plug_id=>wwv_flow_api.id(27082353300832661355)
 ,p_prompt=>unistr('Nazwa wybor\00F3w')
-,p_display_as=>'NATIVE_TEXT_FIELD'
-,p_cSize=>30
-,p_cMaxlength=>100
+,p_display_as=>'NATIVE_SELECT_LIST'
+,p_lov=>'SELECT nazwa_wyborow d, nazwa_wyborow r FROM Wybory'
+,p_lov_display_null=>'YES'
+,p_cHeight=>1
 ,p_field_template=>wwv_flow_api.id(26928631527676904648)
 ,p_item_template_options=>'#DEFAULT#'
-,p_attribute_01=>'N'
+,p_lov_display_extra=>'YES'
+,p_attribute_01=>'NONE'
 ,p_attribute_02=>'N'
-,p_attribute_04=>'TEXT'
-,p_attribute_05=>'BOTH'
 );
 wwv_flow_api.create_page_validation(
  p_id=>wwv_flow_api.id(26611651170733194039)
